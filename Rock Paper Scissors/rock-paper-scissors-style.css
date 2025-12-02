@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 90px; 
+  margin-top: 30px;
+}
+
+.rock{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.but {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.scis {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+
