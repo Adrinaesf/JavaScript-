@@ -26,4 +26,14 @@
   border: 1px solid;
 }
 
+.clear{
+  height: 60px;
+  width: 60px;
+  margin-top: 50px;
+  margin-left: 285px;
+  border-radius: 50%;
+  background-color: pink;
+  border: 1px solid;
+}
+
 

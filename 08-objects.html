@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Objects </title>
+  </head>
+  <body>
+    <h1> Objects </h1>
+    <script> 
+      /* 
+        Objects: It is very similar to struct in 
+        the C programming language. 
+        
+        Features:
+          a) displaying the whole product
+          b) displaying each property
+          c) modifying the property
+          d) adding a new property
+          e) deleting a property
+          f) You can have functions as a property -> which is basically a method
+
+        Why and When to use objects?
+          a) HAving fetures and properties regarding an object
+          like a person: then has features like name, age, hometown, fav color and more
+
+        Built-in objects:
+          a) JSON: Jason 
+          - Has less features than you can think but it is universal, that is most objects in other programming language is coded in jason syntax
+          - Used when sharing data between computers
+          
+
+
+        
+      */
+      const product = {
+        name: 'rock', 
+        price: 1000, 
+        fun: function propertFunction(){
+          return 'an object can save a function as property!!'; 
+        }
+      }
+      // displaying: 
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+      console.leg(product.fun); 
+
+      // modifying
+      product.name = 'new name';
+      console.log(product.name);
+
+      // adding a property
+      product.newProperty = true;
+      console.log(product);
+
+      // deleting a property
+      delete product.newProperty; 
+      console.log(product);
+
+
+
+
+
+      
+
+
+
+    </script>
+
+  </body>
+</html>

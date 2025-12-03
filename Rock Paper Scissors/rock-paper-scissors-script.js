@@ -12,6 +12,12 @@ Steps:
   s vs p --> s win
 */
 // Random comp choice function:
+const resultSheet = {
+  wins: 0, 
+  lose: 0, 
+  ties: 0
+}
+
 function compChoice() {
   // 1: rock  2: paper  3: scissors
   let compChoice = 0; 
@@ -44,13 +50,27 @@ function winner(Pchoice, Cchoice) {
   } else if ((playerChoice === 'Scissors' && computerChoice === 'Scissors') || (playerChoice === 'Rock' && computerChoice === 'Rock') || (playerChoice === 'Paper' && computerChoice === 'Paper')) {
     return 'No one won, tie game...'; 
   }
+}
 
+function updateResult(res){
+  if (res == 'Computer Won!') {
+    resultSheet.lose += 1
+  } else if (res == 'You Won!') {
+    resultSheet.wins += 1
+  } else if (res == 'Clear') {
+    resultSheet.ties = 0
+    resultSheet.wins = 0
+    resultSheet.lose = 0
+  } else {
+    resultSheet.ties += 1
+  }
 }
 
 console.log('Choose your element.')
 // Player choice:
 let playerChoice = '';
 let computerChoice = '';
+
 document.getElementById("rockBtn").addEventListener("click", function(
 ){
   playerChoice = 'Rock'; 
@@ -60,6 +80,10 @@ document.getElementById("rockBtn").addEventListener("click", function(
 
   res = winner(playerChoice, computerChoice); 
   console.log(res);
+
+  updateResult(res); 
+  console.log(resultSheet);
+
 }); 
 
 document.getElementById("paperBtn").addEventListener("click", function() {
@@ -70,6 +94,9 @@ document.getElementById("paperBtn").addEventListener("click", function() {
 
   res = winner(playerChoice, computerChoice); 
   console.log(res);
+
+  updateResult(res); 
+  console.log(resultSheet);
 });
 
 document.getElementById("scisBtn").addEventListener("click", function(){
@@ -80,7 +107,15 @@ document.getElementById("scisBtn").addEventListener("click", function(){
 
   res = winner(playerChoice, computerChoice); 
   console.log(res);
+
+  updateResult(res); 
+  console.log(resultSheet);
 });
+
+document.getElementById("clearBtn").addEventListener("click", function(){
+  updateResult('Clear'); 
+  console.log(resultSheet);
+}); 
 
 // Now the conditions:
 
