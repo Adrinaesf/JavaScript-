@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> AutoBox object </title>
+  </head>
+  <body>
+    <h1> AutoBox object </h1>
+    <p> When JS wrap something like an object, we call it AutoBoxing, just like when using methods on strings, JS consider the string as a special object. </p>
+    <p> Autoboxing works for: String, Numbers, and Bool </p>
+    <h3> Objects are refrences. </h3>
+    <p> Refrences has intresting features. As you can see you can change the properties of an object even if we have <strong> const object = ... </strong>. <br> That is because const is refrenced to the adress, and the adress is always constant, but we can chaneg the value.  </p>
+    <p> <strong> Comparing Objects: </strong> If we want to compare objects, we should just make a function that chekcs if all the properties are the same. If we do obect1 === object2, we are basically checking if their refrences are the same or not. </p>
+
+
+    <script> 
+      // String methods:
+      console.log('hello'.length);
+      console.log('hello'.toLocaleUpperCase());
+
+      // Objects are refrences:
+      const object1 = {
+        message: 'hello'
+      };
+      // Object1 saves the adress of object1, and it is a refrence to it. 
+      // So in here object 2 is not a copy, but it is an adress
+      const object2 = object1;
+      console.log(object2);
+
+      object1.message = 'Good';
+      // As you can see you can change the message, even though we wrote const. 
+      // That is because const is refrenced to the adress, and the adress is always constant, but we can chaneg the value. 
+
+      // Shortcuts:
+      const object4 = {
+        name: 'hello', 
+        price: 2
+      };
+      // These 2 lines are the same. 
+      // const name = object4.name;
+      const { name, price } = object4;
+      // This line takes, name and price and save them in variables called name, and price. 
+
+
+    </script>
+
+  </body>
+</html>
