@@ -25,11 +25,24 @@
         Built-in objects:
           a) JSON: Jason 
           - Has less features than you can think but it is universal, that is most objects in other programming language is coded in jason syntax
-          - Used when sharing data between computers
+          - Used when sharing data between computers. 
+          JS -> JSON:
+          JSON.stringify(*JS object*)
+
+          JSON -> JS:
+          JSON.parse(*JSON object*)
+
+          b) Local storage:
+          It is an object that when you save your data on, and reload the page, you wont lose the data. 
+
+          Setting an Item to local storgae:
+          - localStorage.setItem('nameOfvar', 'value of var')
+          ** NOTE: They should both be string
+
+          - Now we access it: 
+          - localStorage.getItem('nameOfvar'); -> It gives the value
+
           
-
-
-        
       */
       const product = {
         name: 'rock', 
@@ -42,7 +55,7 @@
       console.log(product);
       console.log(product.name);
       console.log(product.price);
-      console.leg(product.fun); 
+      console.log(product.fun); 
 
       // modifying
       product.name = 'new name';
@@ -56,11 +69,22 @@
       delete product.newProperty; 
       console.log(product);
 
+      // Running a property that is a function:
+      console.log(product.fun); 
 
-
-
-
+      // --------------------------------
+      // Built-in objects:
+      // Converting our object to a Jason object:
+      JSON.stringify(product); 
+      // JS object --> JSON
+      // This convert object to a JSON
+      // JSON does not support functions 
       
+
+      // JSON --> JS object:
+      const Json_object = JSON.stringify(product);
+      console.log(JSON.parse(Json_object)); 
+      // --------------------------------
 
 
 

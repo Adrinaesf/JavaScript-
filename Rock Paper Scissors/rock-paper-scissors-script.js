@@ -11,13 +11,25 @@ Steps:
   r vs s  --> r win
   s vs p --> s win
 */
-// Random comp choice function:
+
 const resultSheet = {
   wins: 0, 
   lose: 0, 
   ties: 0
 }
+// We want to load the saved score 
+// So we should get the item and change it to an JS object
+// And then update the result sheet based on that:
+const savedScore = JSON.parse(localStorage.getItem('score')); 
 
+// Now update the result sheet:
+if (savedScore) {
+  resultSheet.lose = savedScore.lose;
+  resultSheet.wins = savedScore.wins;
+  resultSheet.ties = savedScore.ties;
+}
+
+// Random comp choice function:
 function compChoice() {
   // 1: rock  2: paper  3: scissors
   let compChoice = 0; 
@@ -34,6 +46,8 @@ function compChoice() {
   return res
 }
 
+// Checks who is the winner based on the 
+// player and computer choice. 
 function winner(Pchoice, Cchoice) {
   playerChoice = Pchoice;
   computerChoice = Cchoice; 
@@ -52,6 +66,7 @@ function winner(Pchoice, Cchoice) {
   }
 }
 
+// Update the res based on the message, and save the result in the local storage
 function updateResult(res){
   if (res == 'Computer Won!') {
     resultSheet.lose += 1
@@ -64,6 +79,10 @@ function updateResult(res){
   } else {
     resultSheet.ties += 1
   }
+
+  // SAVE SCORE TO LOCAL STORAGE HERE
+  localStorage.setItem('score', JSON.stringify(resultSheet));
+  console.log("Updated score:", resultSheet);
 }
 
 console.log('Choose your element.')
@@ -82,8 +101,6 @@ document.getElementById("rockBtn").addEventListener("click", function(
   console.log(res);
 
   updateResult(res); 
-  console.log(resultSheet);
-
 }); 
 
 document.getElementById("paperBtn").addEventListener("click", function() {
@@ -96,7 +113,6 @@ document.getElementById("paperBtn").addEventListener("click", function() {
   console.log(res);
 
   updateResult(res); 
-  console.log(resultSheet);
 });
 
 document.getElementById("scisBtn").addEventListener("click", function(){
@@ -109,12 +125,10 @@ document.getElementById("scisBtn").addEventListener("click", function(){
   console.log(res);
 
   updateResult(res); 
-  console.log(resultSheet);
 });
 
 document.getElementById("clearBtn").addEventListener("click", function(){
   updateResult('Clear'); 
-  console.log(resultSheet);
 }); 
 
 // Now the conditions:

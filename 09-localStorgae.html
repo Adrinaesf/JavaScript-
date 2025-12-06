@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> localStorage </title>
+  </head>
+  <body>
+    <h1> Local Storage </h1>
+    <p> Here is 3 rules to follow when working with local storage: </p>
+    <p> 1. Load from localStorge when the page starts <br> Purpose: So your game/app starts with previously saved values instead of resetting every refresh. </p>
+    <br>
+    <p> 2. SAVE to localStorage ONLY when something changes <br> You don't overwrite your previous data unless you intentionally update it. </p>
+    <br>
+    <p> 3. DISPLAY the data after loading or updating </p>
+    <script> 
+    
+      // STEP ONE:
+      let data = {
+        wins: 0,
+        loses: 0
+      };
+
+      // Load saved data
+      const saved = JSON.parse(localStorage.getItem("score"));
+      if (saved) {
+        data = saved;   // or copy values into your object
+      }
+    
+      // STEP TWO:
+      function updateResult(result) {
+        data.wins += 1;
+
+        // Save after updating
+        localStorage.setItem("score", JSON.stringify(data));
+      } 
+
+      // Step 3:
+      console.log(data);
+
+    </script>
+
+  </body>
+</html>
