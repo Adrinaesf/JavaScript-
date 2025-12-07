@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Dom </title>
+  </head>
+  <body>
+    <h1> Document Object Model </h1>
+    <p> Another Built-in Object. It represents / models the webpage.<strong> Document object is linked to the webpage, so if we change a property of the object, then it will be displayed to the page. </strong> </p> 
+    <p> <strong> We can have HTML elements inside Javascript!!! </strong>  The DOM object combines JS and HTML together, and it gives JS to control the webpage. </p>
+    
+    <p> <strong> Note: </strong> An html elemnt inside JS, is just a JavaScript object, so it has its own properties, like document.body is an object, and one of its properties is document.body.innerHTML </p>
+    <h4> Methods of document: </h4>
+    <ul>
+      <li> 
+            <strong> document.quarySelector(): </strong> It lets us get ANY ELEMNT from the page and put it inside JS. 
+            <br> input: string that is the html elemnt, like 'body', 'button', 'h1' and more. 
+
+      
+      
+      </li>
+
+
+
+      <li> Benefits: Getting an HTML element from the page, put it inside JS, an dthen save it in a variable. </li>
+      <li> DOM gives JS full control of the webpage </li>
+
+  </ul>
+
+
+    <button style="
+      display: block;
+      margin-top: 10px; 
+    "> Hello </button>
+    <button class="js-button"> Second Button </button>
+
+
+    <script> 
+      console.log(document.title);
+      document.title = 'changed'; 
+
+      // In here the HTML element is converted into a Javascript object. 
+      console.log(document.body);
+      console.log(typeof document.body); // This is just an objetc, we we can use its properties:
+
+      // Properties of document.body:
+      console.log('ALL THE HTML INSIDE THE BODY ELEMNT: ');
+      console.log(document.body.innerHTML);
+      // document.body.innerHTML = '<button> Good Job </button> ';
+
+      /*
+      document.body.innerHTML = 'Hi';
+      document.title = 'Good Job';
+      */
+     // --------------------------------------------
+     // Using methods of the object 'document':
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button')
+            .innerHTML = 'Changed';
+
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+      
+    </script>
+
+  </body>
+</html>
