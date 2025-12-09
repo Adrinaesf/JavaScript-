@@ -1,0 +1,44 @@
+<!-- 
+  In here we learn how to make our project interactive:
+
+  Steps:
+  1. Write the algorithem
+  2. MAke the ocde
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> DOM Projects </title>
+  </head>
+  
+  <body>
+    <p> Youtube Subscribe Button </p>
+    <button class="js-sub-button" onclick=" subscribe()
+    "> Subscribe </button>
+    
+
+    <script>
+      function subscribe(){
+        /*
+        Steps:
+        1.  When tab on subscribe -> text change to 'Subscribed'
+        2. Otehrwise change it back to -> 'Subscribe'
+        */
+
+        // 1. we get the html elemnt
+        const jsSubButton = document.querySelector('.js-sub-button'); 
+
+        // Now that we have the jsElement, we can check if it has what we want:
+        if (jsSubButton.innerText === 'Subscribe') {
+          jsSubButton.innerHTML = 'Subscribed'; 
+        } else {
+          jsSubButton.innerHTML = 'Subscribe'; 
+        }
+      }
+      
+    </script>
+
+  </body>
+</html>
