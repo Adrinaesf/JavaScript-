@@ -4,6 +4,16 @@
   Steps:
   1. Write the algorithem
   2. MAke the ocde
+
+  //----------------------------
+  In this lesson: 
+  1. Document Object Model (DOM)
+  2. documentary.querySelector(...)
+  3. innerHTML
+  4. 3 Projects using DOM
+  5. onkeydown + even (object)
+  6. Details on String(), Number() + window object
+
 -->
 
 
@@ -16,10 +26,32 @@
   <body>
     <p> Youtube Subscribe Button </p>
     <button class="js-sub-button" onclick=" subscribe()
-    "> Subscribe </button>
+    " style="margin-bottom: 20px;"> Subscribe </button>
+
+    <p> Amazon Shipping Calculator </p>
+    <p> Order under $40 = +$10 </p>
+    <p> Order over $40 = FREE shipping </p>
+    
+    
+    <input placeholder="Cost of Order" class="js-user-input" onkeydown="
+        amazonKeyDown(event);
+    ">
+    
+    
+    <button onclick=" amazon() "> Calculate </button>
+    <p class="js-result"> Final Cost: </p>
+
+
     
 
     <script>
+      function amazonKeyDown(event) {
+        if (event.key === 'Enter'){
+          amazon()
+        }
+      }
+
+
       // Suscribe button functionality: 
       function subscribe(){
         /*
@@ -39,6 +71,28 @@
         }
       }
       
+      function amazon(){
+        /*
+        Steps:
+        1. Tab on the button
+        2. Get the user's input
+        3. if input > 40 -> free shipping
+           else -> +10 shipping
+        4. Display the final cost
+        */
+        console.log("Button clicked!");
+        const userInput = document.querySelector('.js-user-input');
+
+        const result = document.querySelector('.js-result'); 
+
+        let cost = Number(userInput.value);
+
+        if (cost >= 40){
+          result.innerHTML = 'Final Cost: Free Shipping!!!';
+        } else {
+          result.innerHTML = `Final Cost: $${cost + 10}`;
+        }
+      }
     </script>
 
   </body>
