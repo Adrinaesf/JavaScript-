@@ -1,0 +1,153 @@
+<!-- 
+  In here we learn how to make our project interactive:
+
+  Steps:
+  1. Write the algorithem
+  2. MAke the ocde
+
+  //----------------------------
+  In this lesson: 
+  1. Document Object Model (DOM)
+  2. documentary.querySelector(...)
+  3. innerHTML
+  4. 3 Projects using DOM
+  5. onkeydown + even (object)
+  6. Details on String(), Number() + window object
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> DOM Projects </title>
+    <style> 
+      .texts {
+        font-family:Arial, Helvetica, sans-serif; 
+        size: 60px;
+      }
+
+      .js-result {
+        font-family:Arial, Helvetica, sans-serif; 
+        margin-bottom: 45px;
+      }
+
+      .js-sub-button{
+        background-color: #000000;
+        color: white;
+        height: 35px;
+        width: 95px;
+        border: none;
+        border-radius: 20px;
+        font-weight: bold;
+        margin-bottom: 40px;
+        cursor: pointer;
+      }
+
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      
+    
+    
+    
+    
+    
+    
+    
+    </style>
+  </head>
+  
+  <body>
+    <p class="texts"> YouTube Subscribe Button </p>
+    <button class="js-sub-button" onclick=" subscribe()
+    "> Subscribe </button>
+
+    <p class="texts"> Amazon Shipping Calculator </p>
+    <p class="texts"> Order under $40 = +$10 </p>
+    <p class="texts" > Order over $40 = FREE shipping </p>
+    
+    
+    <input placeholder="Cost of Order" class="js-user-input" onkeydown="
+        amazonKeyDown(event);
+    ">
+    
+    
+    <button onclick=" amazon() "> Calculate </button>
+    <p class="js-result"> Final Cost: </p>
+    <p class="texts"> Rock Paper Scissors </p>
+
+    <p class="texts"> Click here </p>
+
+    
+
+    <script>
+      function amazonKeyDown(event) {
+        if (event.key === 'Enter'){
+          amazon()
+        }
+      }
+
+
+      // Suscribe button functionality: 
+      function subscribe(){
+        /*
+        Steps:
+        1.  When tab on subscribe -> text change to 'Subscribed'
+        2. Otehrwise change it back to -> 'Subscribe'
+
+        + 
+        // Now we want to style the button:
+        // When we click the button:
+        // 1. Add a class
+        // 2. This class will have different styles
+
+        Method: classList:
+        - classList is an object :
+        - Method: add(str) = adds a class to an element, str = name of that class. remove(name) -> removes that class
+        */
+
+        // 1. we get the html elemnt
+        const jsSubButton = document.querySelector('.js-sub-button'); 
+
+        // Now that we have the jsElement, we can check if it has what we want:
+        if (jsSubButton.innerText === 'Subscribe') {
+          jsSubButton.innerText = 'Subscribed'; 
+          jsSubButton.classList.add('is-subscribed');
+
+        } else {
+          jsSubButton.innerText = 'Subscribe'; 
+          jsSubButton.classList.remove('is-subscribed');
+        }
+
+
+      }
+      
+      function amazon(){
+        /*
+        Steps:
+        1. Tab on the button
+        2. Get the user's input
+        3. if input > 40 -> free shipping
+           else -> +10 shipping
+        4. Display the final cost
+        */
+        console.log("Button clicked!");
+        const userInput = document.querySelector('.js-user-input');
+
+        const result = document.querySelector('.js-result'); 
+
+        let cost = Number(userInput.value);
+
+        if (cost >= 40){
+          result.innerHTML = 'Final Cost: Free Shipping!!!';
+        } else {
+          result.innerHTML = `Final Cost: $${cost + 10}`;
+        }
+      }
+    </script>
+
+  </body>
+</html>
