@@ -22,14 +22,10 @@
   <head>
     <title> DOM Projects </title>
     <style> 
-      .texts {
-        font-family:Arial, Helvetica, sans-serif; 
+      body {
+        /* The body: will style all the texts of the page. */
+        font-family: Arial; 
         size: 60px;
-      }
-
-      .js-result {
-        font-family:Arial, Helvetica, sans-serif; 
-        margin-bottom: 45px;
       }
 
       .js-sub-button{
@@ -49,7 +45,37 @@
         color: black;
       }
 
+      .cost-input {
+        font-size: 14px;
+        padding: 10px;
+        /* 
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        */
+        width: 150px;
+      }
       
+      .calc-button {
+        font-size: 15px;
+        padding: 12px; 
+        padding-left: 16px;
+        padding-right: 16px;
+        background-color: green;
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: box-shadow 0.13s;
+      }
+
+      .calc-button:hover {
+        box-shadow: 1px 2px 3px gray;
+      }
+
+      .calc-button:active{
+        opacity: 0.8;
+      }
     
     
     
@@ -61,25 +87,25 @@
   </head>
   
   <body>
-    <p class="texts"> YouTube Subscribe Button </p>
+    <p> YouTube Subscribe Button </p>
     <button class="js-sub-button" onclick=" subscribe()
     "> Subscribe </button>
 
-    <p class="texts"> Amazon Shipping Calculator </p>
-    <p class="texts"> Order under $40 = +$10 </p>
-    <p class="texts" > Order over $40 = FREE shipping </p>
+    <p> Amazon Shipping Calculator </p>
+    <p> Order under $40 = +$10 </p>
+    <p> Order over $40 = FREE shipping </p>
     
     
-    <input placeholder="Cost of Order" class="js-user-input" onkeydown="
+    <input placeholder="Cost of Order" class="js-user-input cost-input" onkeydown="
         amazonKeyDown(event);
     ">
     
     
-    <button onclick=" amazon() "> Calculate </button>
+    <button class="calc-button" onclick=" amazon() "> Calculate </button>
     <p class="js-result"> Final Cost: </p>
-    <p class="texts"> Rock Paper Scissors </p>
+    <p> Rock Paper Scissors </p>
 
-    <p class="texts"> Click here </p>
+    <p> Click here </p>
 
     
 
