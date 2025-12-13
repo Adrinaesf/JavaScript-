@@ -1,4 +1,7 @@
-.container {
+.body {
+  background-color: rgb(25, 25, 25);
+ }
+ .container {
     display: flex;
     justify-content: left;
     gap: 10px; 
@@ -10,8 +13,4 @@
     justify-content: left;
     margin-top: 20px;
   }
-  
-  
-  
-  
   
