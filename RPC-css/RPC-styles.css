@@ -1,0 +1,113 @@
+body {
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-family: Arial;
+  }
+
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .rock-img {
+    height: 50px;
+  }
+
+  .rock {
+    background-color: transparent;
+    border: 3px solid white;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin-right: 10px;
+    cursor: pointer;
+    transform: box-shadow 0.3s opacity 0.15s;
+  }
+  .rock:hover {
+    box-shadow: 3px 4px 3px white;
+  }
+  .rock:active {
+    opacity: 0.3;
+  }
+
+  .but {
+    background-color: transparent;
+    border: 3px solid white;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin-right: 10px;
+    cursor: pointer;
+    transform: box-shadow 0.3s opacity 0.15s;
+  }
+  .but:hover {
+    box-shadow: 3px 4px 3px white;
+  }
+  .but:active {
+    opacity: 0.3;
+  }
+
+  .scis {
+    background-color: transparent;
+    border: 3px solid white;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin-right: 10px;
+    cursor: pointer;
+    transform: box-shadow 0.3s opacity 0.15s;
+  }
+  .scis:hover {
+    box-shadow: 3px 4px 3px white;
+  }
+  .scis:active {
+    opacity: 0.3;
+  }
+
+  .js-message {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+
+  .text-result {
+    font-size: 20px;
+  }
+
+  .js-wins {
+    color: rgb(50, 205, 252);
+  }
+
+  .js-lose {
+    color: rgb(50, 205, 252);
+  }
+
+  .js-ties {
+    color: rgb(50, 205, 252);
+  }
+
+  .clear {
+    background-color: white;
+    width: 150px;
+    padding: 10px;
+    border: none;
+    font-size: 15px;
+    transition: opacity 0.1s;
+  }
+
+  .clear:hover {
+    opacity: 0.8;
+
+  }
+
+  .clear:active {
+    opacity: 0.6;
+  }
+
+  .js-your-choice {
+    font-size: 20px;
+  }
+
+  .js-comp-choice {
+    font-size: 20px;
+  }
