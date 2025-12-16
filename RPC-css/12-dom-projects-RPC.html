@@ -2,31 +2,105 @@
 <html>
   <head>
     <title> Rock Paper Scissors </title>
-    <link rel="stylesheet" href="RPC-css/12-dom-RPC-style.css">
-    <style> 
-    body{
-      background-color: black;
-    }
-    
+    <style>
+      body {
+        background-color: rgb(25, 25, 25);
+        color: white;
+        font-family: Arial;
+      }
+
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .rock-img {
+        height: 50px;
+      }
+
+      .rock {
+        background-color: transparent;
+        border: 3px solid white;
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        margin-right: 10px;
+        cursor: pointer;
+
+      }
+
+      .but {
+        background-color: transparent;
+        border: 3px solid white;
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        margin-right: 10px;
+        cursor: pointer;
+
+      }
+
+      .scis {
+        background-color: transparent;
+        border: 3px solid white;
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .js-message {
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 50px;
+      }
+
+      .text-result {
+        font-size: 20px;
+      }
+
+      .js-wins {
+        color: rgb(50, 205, 252);
+      }
+
+      .js-lose {
+        color: rgb(50, 205, 252);
+      }
+
+      .js-ties {
+        color: rgb(50, 205, 252);
+      }
+
+
     </style>
-
-
-
   </head>
 
   <body>
-    <p> Rock Paper Scissors  </p>
+    <p class="title"> Rock Paper Scissors  </p>
 
     <div class="container"> 
-      <button class="rock" id="rockBtn"> Rock </button>
-      <button class="but" id="paperBtn"> Paper </button>
-      <button class="scis" id="scisBtn"> Scissors </button>
+      <button class="rock" id="rockBtn"> 
+        <img class="rock-img" src="rock-emoji.png">
+      </button>
+
+      
+      <button class="but" id="paperBtn"> 
+        <img class="rock-img" src="paper-emoji.png">
+      </button>
+
+
+      <button class="scis" id="scisBtn"> 
+        <img class="rock-img" src="scissors-emoji.png">
+
+      </button>
     </div>
     <p class="js-message"></p>
-    <p class="js-your-choice"> You: ... </p>
+    <p class="js-your-choice"> You: ...
+    </p>
     <p class="js-comp-choice"> Computer: ... </p>
     
-    <p> Wins: <span class="js-wins">0</span>, Lose: <span class="js-lose">0</span>, Ties: <span class="js-ties">0</span> </p>
+    <p class="text-result"> Wins: <span class="js-wins">0</span>, Lose: <span class="js-lose">0</span>, Ties: <span class="js-ties">0</span> </p>
 
     <div class="clearContainer"> 
       <button class="clear" id="clearBtn"> Reset Score </button>
